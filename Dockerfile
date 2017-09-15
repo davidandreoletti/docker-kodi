@@ -8,7 +8,10 @@ RUN echo "deb-src http://deb.debian.org/debian/ stable main contrib non-free" >>
     mkdir -p /usr/share/man/man1 && \ 
     apt update && \
     apt install -y git-core libssl-dev xorg curl wget apt-transport-https dirmngr openjdk-8-jre-headless && \
-    apt-get build-dep -y kodi
+    apt-get build-dep -y kodi && \
+    apt-get autoremove -y && \
+    apt-get clean -y && \
+    rm -rf /tmp/* /var/tmp/* /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN mkdir -p /opt/kodi && curl -sL https://github.com/xbmc/xbmc/archive/${KODI_VERSION}.tar.gz | tar xz -C /opt/kodi --strip-components=1
 
