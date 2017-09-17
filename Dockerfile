@@ -1,7 +1,7 @@
 FROM debian:stretch-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
-
+ENV KODI_VERSION 17.4-Krypton
 ENV UID 1000
 ENV USER htpc
 
