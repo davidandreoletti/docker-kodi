@@ -18,6 +18,6 @@ RUN adduser --disabled-password --uid ${UID} --gecos '' ${USER} && \
     apt-get clean -y && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-USER htpc
+USER ${USER}
 
 CMD kodi
