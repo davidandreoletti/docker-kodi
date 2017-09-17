@@ -18,9 +18,9 @@ RUN apt-get purge -y --auto-remove kodi-build-deps && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 
-FROM debian:stretch-slim
+#FROM debian:stretch-slim
 
-COPY --from=builder   /opt/kodi/*  /
+#COPY --from=builder   /opt/kodi/*  /
 
 CMD kodi
 
