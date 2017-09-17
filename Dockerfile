@@ -21,3 +21,4 @@ RUN adduser --disabled-password --uid ${UID} --gecos '' ${USER} && \
 USER ${USER}
 
 CMD kodi
+
