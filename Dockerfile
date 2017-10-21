@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV KODI_VERSION 17.4-Krypton
  
  
-RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -g ${GROUP} --gecos '' ${USER} && \
+RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} --ingroup ${GROUP} --gecos '' ${USER} && \
     echo "deb-src http://deb.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list && \
     mkdir -p /usr/share/man/man1 && \
     apt update && \
