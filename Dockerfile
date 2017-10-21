@@ -5,7 +5,7 @@ ENV GID 1000
 ENV USER htpc
 ENV GROUP htpc
 
-ARG  DEBIAN_FRONTEND noninteractive
+ENV  DEBIAN_FRONTEND noninteractive
 
 ENV KODI_VERSION 17.4-Krypton
 
