@@ -31,7 +31,7 @@ LABEL version=${KODI_VERSION}
 RUN ls -lha /opt/kodi/usr/local/ && ls -lha  /opt/kodi/usr/local/bin/ && ls -lha  /opt/kodi/usr/local/lib/
 
 
-WORKDIR /opt/kodi/
 
- #CMD /opt/kodi//usr/local/bin/kodi
-CMD /opt/kodi//usr/local/lib/kodi.bin
+
+CMD /opt/kodi//usr/local/bin/kodi-standalone
+
