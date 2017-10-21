@@ -28,7 +28,7 @@ USER ${USER}
 LABEL url=https://api.github.com/repos/xbmc/xbmc/releases/latest
 LABEL version=${KODI_VERSION}
 
-RUN ls -lha /opt/
+RUN ls -lha /opt/kodi/
 
 CMD /opt/kodi/bin/kodi
 
