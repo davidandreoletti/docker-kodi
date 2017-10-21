@@ -30,5 +30,5 @@ LABEL version=${KODI_VERSION}
 
 RUN ls -lha /opt/kodi/usr/local/
 
-CMD /opt/kodi/bin/kodi
+CMD /opt/kodi/usr/local/bin/kodi
 
