@@ -1,11 +1,15 @@
 FROM debian:stretch-slim
 
-ENV DEBIAN_FRONTEND=noninteractive
-ENV KODI_VERSION 17.4-Krypton
 ENV UID 1000
+ENV GID 1000
 ENV USER htpc
+ENV GROUP htpc
 
-RUN adduser --disabled-password --uid ${UID} --gecos '' ${USER} && \
+ARG  DEBIAN_FRONTEND noninteractive
+
+ENV KODI_VERSION 17.4-Krypton
+
+RUN groupadd -g ${GID} && adduser --disabled-password --uid ${UID} --gecos '' ${USER} && \
     echo "deb-src http://deb.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list && \
     mkdir -p /usr/share/man/man1 && \
     apt update && \
@@ -20,5 +24,8 @@ RUN adduser --disabled-password --uid ${UID} --gecos '' ${USER} && \
 
 USER ${USER}
 
-CMD kodi
+LABEL url=https://api.github.com/repos/xbmc/xbmc/releases/latest
+LABEL version=${KODI_VERSION}
+
+CMD /opt/kodi/bin/kodi
 
