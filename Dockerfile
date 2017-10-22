@@ -31,7 +31,7 @@ LABEL version=${KODI_VERSION}
 RUN apt update && apt install -y	libavahi-client-dev libmicrohttpd-dev 	libglu1-mesa libtinyxml2.6.2v5 \
 libcrossguid0 	libyajl-dev 	libxslt1-dev 	libpcrecpp0v5  	libfreetype6 	libtag1v5-vanilla
 
-RUN ln -lha /usr/local/bin/ && ldd /usr/local/bin/kodi
+RUN ls -lha /usr/local/bin/ && ldd /usr/local/bin/kodi
 
 #CMD /opt/kodi/usr/local/bin/kodi-standalone
 
