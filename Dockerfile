@@ -83,14 +83,14 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
     echo "deb-src http://deb.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list && \
     mkdir -p /usr/share/man/man1 && \
     apt update && \
-   #  apt install -y libssl-dev  devscripts && \
-   apt-get install --no-install-recommends -y $BUILD_DEPENDENCIES && \
-   #  mk-build-deps -ir -t "apt-get -qq --no-install-recommends" kodi && \
+     apt install -y libssl-dev  devscripts && \
+  # apt-get install --no-install-recommends -y $BUILD_DEPENDENCIES && \
+    mk-build-deps -ir -t "apt-get -qq --no-install-recommends" kodi && \
     apt install tar -y && mkdir -p /tmp/kodi && curl -L https://github.com/xbmc/xbmc/archive/${KODI_VERSION}.tar.gz | tar xz -C /tmp/kodi --strip-components=1 && \
     cd /tmp/kodi && ./bootstrap && ./configure && make -j $(getconf _NPROCESSORS_ONLN) && make install -j $(getconf _NPROCESSORS_ONLN) && \
  #   apt-get purge -y --auto-remove kodi-build-deps && \
-    apt-get purge --auto-remove -y $BUILD_DEPENDENCIES && \
-  #   apt-get autoremove -y && \
+  #  apt-get purge --auto-remove -y $BUILD_DEPENDENCIES && \
+     apt-get autoremove -y && \
     apt-get clean -y && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apt/archives/* /var/lib/apt/lists/*
 
