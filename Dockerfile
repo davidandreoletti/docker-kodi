@@ -27,7 +27,7 @@ ARG BUILD_DEPENDENCIES="\
   libbz2-dev \
   liblzo2-dev \
   libtinyxml-dev \
-  libmysqlclient-dev \
+  default-libmysqlclient-dev \
   libcurl4-openssl-dev \
   libssl-dev \
   libyajl-dev \
