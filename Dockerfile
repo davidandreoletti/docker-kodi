@@ -5,6 +5,7 @@ ENV GID 1000
 ENV USER htpc
 ENV GROUP htpc
 
+RUN apt update &&  apt-get --no-install-recommends kodi
 
 ENV KODI_VERSION 17.4-Krypton
 
