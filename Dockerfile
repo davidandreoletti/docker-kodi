@@ -23,7 +23,7 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
     apt-get clean -y && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-USER ${USER}
+
 
 LABEL url=https://api.github.com/repos/xbmc/xbmc/releases/latest
 LABEL version=${KODI_VERSION}
@@ -31,5 +31,7 @@ LABEL version=${KODI_VERSION}
 RUN apt update && apt install -y	avahi-libs
 
 #CMD /opt/kodi/usr/local/bin/kodi-standalone
+
+USER ${USER}
 
 CMD kodi
