@@ -28,7 +28,7 @@ USER ${USER}
 LABEL url=https://api.github.com/repos/xbmc/xbmc/releases/latest
 LABEL version=${KODI_VERSION}
 
-RUN ldd /usr/local/bin/kodi
+RUN apt update && apt install -y	avahi-libs
 
 #CMD /opt/kodi/usr/local/bin/kodi-standalone
 
