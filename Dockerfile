@@ -22,7 +22,7 @@ ARG BUILD_DEPENDENCIES="\
   libtool \
   swig \
   doxygen \
-  openjdk-7-jre-headless \
+  openjdk-8-jre-headless\
   default-jdk \
   libbz2-dev \
   liblzo2-dev \
