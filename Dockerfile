@@ -7,7 +7,7 @@ ENV GROUP htpc
 
 
 RUN  echo "deb-src http://deb.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list && \ 
-      apt update &&  apt-get build-dep kodi
+      apt update &&  apt-get build-dep -y kodi
 
 ENV KODI_VERSION 17.4-Krypton
 
