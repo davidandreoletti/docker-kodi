@@ -28,7 +28,7 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
 LABEL url=https://api.github.com/repos/xbmc/xbmc/releases/latest
 LABEL version=${KODI_VERSION}
 
-RUN apt update && apt install -y	libavahi-client-dev
+RUN apt update && apt install -y	libavahi-client-dev libmicrohttpd-dev
 
 #CMD /opt/kodi/usr/local/bin/kodi-standalone
 
