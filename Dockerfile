@@ -5,7 +5,9 @@ ENV GID 1000
 ENV USER htpc
 ENV GROUP htpc
 
-RUN apt update &&  apt-get build-dep kodi
+
+RUN  echo "deb-src http://deb.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list && \ 
+      apt update &&  apt-get build-dep kodi
 
 ENV KODI_VERSION 17.4-Krypton
 
