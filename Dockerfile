@@ -39,7 +39,8 @@ LABEL version=${KODI_VERSION}
  # rm -rf /tmp/kodi* && \
 
 RUN apt update && apt install -y	libavahi-client-dev libmicrohttpd-dev 	libglu1-mesa libtinyxml2.6.2v5 \
-libcrossguid0 	libyajl-dev 	libxslt1-dev 	libpcrecpp0v5  	libfreetype6 	libtag1v5-vanilla libcdio13 libasound2 	libpulse0
+libcrossguid0 	libyajl-dev 	libxslt1-dev 	libpcrecpp0v5  	libfreetype6 	libtag1v5-vanilla libcdio13 libasound2 	libpulse0  \
+libxrandr2
 
 #RUN ls -lha /usr/local/lib/ && ldd /usr/local/lib/kodi
 
