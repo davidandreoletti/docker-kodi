@@ -18,7 +18,7 @@ USER ${USER}
 
 VOLUME /home/${USER}/.kodi
 
-LABEL version=${KODO_VERSION}
+LABEL version=${KODI_VERSION}
 LABEL url=https://api.github.com/repos/xbmc/xbmc/releases/latest
 
 ENTRYPOINT [ "/usr/bin/kodi-standalone" ]
