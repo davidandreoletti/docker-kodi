@@ -15,7 +15,7 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
  && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
 # Use ALSA
-RUN sed -i 's/; autospawn = yes/; autospawn = no/g' /etc/pulse/client.conf 
+RUN sed -i 's/; autospawn = yes/autospawn = no/g' /etc/pulse/client.conf 
 
 USER ${USER}
 
