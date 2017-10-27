@@ -14,6 +14,9 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
  && mkdir -p /home/${USER}/.kodi/ &&  chown -R ${USER}:${GROUP} /home/${USER}/.kodi/ \
  && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
+# Use ALSA
+RUN sed -i 's/; autospawn = yes/; autospawn = no/g' /etc/pulse/client.conf 
+
 USER ${USER}
 
 VOLUME /home/${USER}/.kodi
