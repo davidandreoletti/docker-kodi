@@ -5,7 +5,7 @@ ENV GID 1000
 ENV USER htpc
 ENV GROUP htpc
 
-ENV KODI_VERSION  2:17.4+git20170822.1009-final-0zesty
+ENV KODI_VERSION 2:17.5+git20171026.2109-final-0zesty
 
 RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} --ingroup ${GROUP} --gecos '' ${USER} \
  && apt-get update && apt-get install -y  --no-install-recommends software-properties-common \
