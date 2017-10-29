@@ -12,12 +12,8 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
  && add-apt-repository -y ppa:team-xbmc/ppa \
  && apt-get update && apt-get install -y  --no-install-recommends kodi=${KODI_VERSION} kodi-pvr-iptvsimple \
  && mkdir -p /home/${USER}/.kodi/ &&  chown -R ${USER}:${GROUP} /home/${USER}/.kodi/ \
+ && usermod -a -G audio ${USER} \
  && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* 
-
-# Use ALSA
-RUN sed -i 's/; autospawn = yes/autospawn = no/g' /etc/pulse/client.conf 
-
-RUN apt update && apt install -y alsa
 
 USER ${USER}
 
