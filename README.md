@@ -25,4 +25,4 @@ WantedBy=multi-user.target
 
 `xhost +local:`docker inspect --format='{{ .Config.Hostname }}' kodi``
 
-`docker run -d --env DISPLAY=:0 --name=kodi --hostname=kodi  --privileged -v kodi:/home/htpc/.kodi --net host lukasmrtvy/docker-kodi`
+`sudo docker pull lukasmrtvy/docker-kodi ; sudo docker rm -f kodi ; sudo docker run -d --restart always --env DISPLAY=:0 -p 9090:9090 -p 8080:8080 --device /dev/snd --device /dev/dri --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw"  --name=kodi -v kodi:/home/htpc/.kodi  lukasmrtvy/docker-kodi`
