@@ -8,7 +8,7 @@ ENV GROUP htpc
 ENV KODI_VERSION 2:17.5+git20171027.2324-final-0artful
 
 RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} --ingroup ${GROUP} --gecos '' ${USER} \
- && apt-get update && apt-get install -y  --no-install-recommends software-properties-common \
+ && apt-get update && apt-get install -y  --no-install-recommends software-properties-common tzdata  \
  && add-apt-repository -y ppa:team-xbmc/ppa \
  && apt-get update && apt-get install -y  --no-install-recommends kodi=${KODI_VERSION} kodi-pvr-iptvsimple \
  && mkdir -p /home/${USER}/.kodi/ &&  chown -R ${USER}:${GROUP} /home/${USER}/.kodi/ \
