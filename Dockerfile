@@ -20,6 +20,6 @@ USER ${USER}
 VOLUME /home/${USER}/.kodi
 
 LABEL version=${KODI_VERSION}
-LABEL url=https://api.github.com/repos/xbmc/xbmc/releases/latest
+LABEL url=https://github.com/xbmc/xbmc/
 
 CMD /usr/bin/kodi --standalone
