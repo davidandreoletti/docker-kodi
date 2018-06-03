@@ -15,6 +15,7 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
  && usermod -a -G audio,video ${USER} \
  && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
+
 USER ${USER}
 
 VOLUME /home/${USER}/.kodi
