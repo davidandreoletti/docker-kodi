@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM ubuntu:bionic
 
 ENV UID 1000
 ENV GID 1000
 ENV USER htpc
 ENV GROUP htpc
 
-ENV KODI_VERSION 	2:17.6+git20180430.1623-final-0bionic
+ENV KODI_VERSION 	2:18.0+git20190128.1934-final-0bionic
 
 RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} --ingroup ${GROUP} --gecos '' ${USER} \
  && apt-get update && apt-get install -y  --no-install-recommends software-properties-common tzdata \
@@ -15,12 +15,8 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
  && usermod -a -G audio,video ${USER} \
  && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
-
 USER ${USER}
 
 VOLUME /home/${USER}/.kodi
-
-LABEL version=${KODI_VERSION}
-LABEL url=https://github.com/xbmc/xbmc/
 
 CMD /usr/bin/kodi --standalone
