@@ -2,8 +2,8 @@ FROM ubuntu:bionic
 
 ENV UID 1000
 ENV GID 1000
-ENV USER htpc
-ENV GROUP htpc
+ENV USER kodi
+ENV GROUP kodi
 
 ENV KODI_VERSION 	2:18.0+git20190128.1934-final-0bionic
 
