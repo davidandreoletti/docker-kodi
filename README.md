@@ -39,3 +39,7 @@ To query the current settings:
 export DISPLAY=:0
 xset q
 ```
+Disable:
+```
+@reboot root sh -c "xset s off -dpms" > /dev/null 2>&1
+``
