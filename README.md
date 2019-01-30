@@ -8,7 +8,7 @@
 More info about X11 and Docker: http://wiki.ros.org/docker/Tutorials/GUI
 
 ```
-cat /etc/systemd/system/xinit.service 
+cat /etc/systemd/system/x11.service 
 [Unit]
 Description=Autologin to X
 After=systemd-user-sessions.service
@@ -41,5 +41,5 @@ xset q
 ```
 Disable:
 ```
-@reboot root sh -c "xset s off -dpms" > /dev/null 2>&1
-``
+echo "@reboot root sh -c 'xset s off -dpms' > /dev/null 2>&1" >> /etc/crontab
+```
