@@ -45,3 +45,11 @@ echo "@reboot root sh -c 'DISPLAY=:0 ; xset s off -dpms' > /dev/null 2>&1" >> /e
 ```
 or in:
 `/usr/share/X11/xorg.conf.d/`
+
+## TODO
+```
+#https://kodi.wiki/view/Web_interface
+#sed -i -e /home/${USER}/.kodi/userdata/guisettings.xml
+#sed -i -e /home/${USER}/.kodi/userdata/advancedsettings.xml 
+#ln -s /dev/stdout /home/${USER}/.kodi/temp/kodi.log && \
+```
