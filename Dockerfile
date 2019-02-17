@@ -12,7 +12,7 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
  && add-apt-repository -y ppa:team-xbmc/ppa \
  && apt-get update && apt-get install -y  --no-install-recommends kodi=${KODI_VERSION} kodi-pvr-iptvsimple  tzdata i965-va-driver  \
  && mkdir -p /home/${USER}/.kodi/ &&  chown -R ${USER}:${GROUP} /home/${USER}/.kodi/ \
- && sed -i -e 's#<setting id="services.esallinterfaces" default="true">.*</setting>#<setting id="services.esallinterfaces" default="true">true</setting>#' -e 's#<setting id="services.webserver" default="true">.*</setting>#<setting id="services.webserver" default="true">true</setting>#' -e 's#<setting id="services.zeroconf" default="true">.*</setting>#<setting id="services.zeroconf" default="true">true</setting>#' ~/.kodi/userdata/guisettings.xml \
+ && sed -i -e 's#<setting id="services.esallinterfaces" default="true">.*</setting>#<setting id="services.esallinterfaces" default="true">true</setting>#' -e 's#<setting id="services.webserver" default="true">.*</setting>#<setting id="services.webserver" default="true">true</setting>#' -e 's#<setting id="services.zeroconf" default="true">.*</setting>#<setting id="services.zeroconf" default="true">true</setting>#' /home/${USER}/.kodi/userdata/guisettings.xml \
  && usermod -a -G audio,video ${USER} \
  && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
