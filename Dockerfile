@@ -13,7 +13,7 @@ RUN groupadd -r -g ${GID} ${GROUP} && adduser --disabled-password --uid ${UID} -
  && apt-get update && apt-get install -y  --no-install-recommends kodi=${KODI_VERSION} kodi-pvr-iptvsimple  tzdata i965-va-driver  \
  && mkdir -p /home/${USER}/.kodi/userdata \
  && touch /home/${USER}/.kodi/userdata/advancedsettings.xml \
- && printf "<advancedsettings>\n    <services>\n        <esallinterfaces>true</esallinterfaces>\n        <webserver>true</webserver>\n        <zeroconf>true</zeroconf>\n    </servic$
+ && printf "<advancedsettings>\n    <services>\n        <esallinterfaces>true</esallinterfaces>\n        <webserver>true</webserver>\n        <zeroconf>true</zeroconf>\n    </services>\n</advancedsettings>" > /home/${USER}/.kodi/userdata/advancedsettings.xml \
  && chown -R ${USER}:${GROUP} /home/${USER}/.kodi/ \
  && usermod -a -G audio,video ${USER} \
  && apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* 
