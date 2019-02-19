@@ -6,7 +6,7 @@
 
 ## Usage:
 More info about X11 and Docker: http://wiki.ros.org/docker/Tutorials/GUI
-
+Running under root !
 ```
 cat /etc/systemd/system/x11.service 
 [Unit]
